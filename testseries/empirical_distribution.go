@@ -5,13 +5,26 @@ package testseries
 // entsprechende Wert der empirischen Verteilungsfunktion steht.
 func EmpiricalDistribution(relativeFreqs []float64) []float64 {
 	emp := make([]float64, len(relativeFreqs))
-	// TODO
+
+	for i := range relativeFreqs {
+
+		//Die kumulierte relative häufigkeit errechnen
+		cumulativeFreq := 0.0
+
+		for j := 0; j <= i; j++ {
+			cumulativeFreq += relativeFreqs[j]
+		}
+
+		//in die liste emp schreiben
+		emp[i] = cumulativeFreq
+	}
+
 	return emp
 }
 
 // Distribution erwartet eine Liste mit ganzzahligen Messwerten.
 // Die Funktion liefert eine Liste mit den Werten der empirischen Verteilungsfunktion.
 func Distribution(values []int) []float64 {
-	// TODO
-	return []float64{}
+	list := []float64{0.0, 0.0}
+	return list
 }

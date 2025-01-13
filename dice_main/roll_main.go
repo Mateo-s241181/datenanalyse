@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/tel23a-inf/data-analysis/dice"
+	"github.com/tel23a-inf/data-analysis/testseries"
 )
 
 // readUserInput fragt den Benutzer nach der Anzahl der Würfe und der Anzahl der Würfel.
@@ -23,7 +24,11 @@ func readUserInput() (int, int) {
 
 // printDiceStatistics berechnet die Statistik für die Würfelwürfe und gibt sie aus.
 func printDiceStatistics(rollResults []int) {
-	fmt.Println(rollResults)
+	testseries.PrintDistribution(rollResults)
+
+	fmt.Printf("\n-------------------\n")
+
+	//testseries.PrintHistogram(rollResults)
 }
 
 // main kombiniert die anderen Funktionen zu einem Programm.
